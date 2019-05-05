@@ -18,8 +18,8 @@ class App extends Component {
     });
   };
 
-  isResults = () => {
-    if (this.state.searchResults.length > 0) {
+  isSearch = () => {
+    if (this.state.searchResults.length > 0 || this.state.searchTerm) {
       return (
         <SearchResults
           searchTerm={this.state.searchTerm}
@@ -34,7 +34,7 @@ class App extends Component {
       <div className="App">
         <SearchBar onSubmit={this.onSearchSubmit} />
         <main className="search-results py-5">
-          <Container>{this.isResults()}</Container>
+          <Container>{this.isSearch()}</Container>
         </main>
       </div>
     );

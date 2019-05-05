@@ -22,7 +22,9 @@ const SearchResults = props => {
       <h1 className="mb-5">
         {`${results.length} results for ${props.searchTerm}`}
       </h1>
-      <div className="search-results-grid">{results}</div>
+      {results.length > 0 ? (
+        <div className="search-results-grid">{results}</div>
+      ) : null}
     </React.Fragment>
   );
 };
