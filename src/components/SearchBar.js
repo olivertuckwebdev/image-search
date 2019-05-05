@@ -10,12 +10,12 @@ class SearchBar extends Component {
   onFormSubmit = event => {
     event.preventDefault();
 
-    console.log(this.state.searchTerm);
+    this.props.onSubmit(this.state.searchTerm);
   };
 
   render() {
     return (
-      <header className="py-4 border-bottom">
+      <header className="py-4 shadow-sm">
         <Container>
           <Row className="align-items-center">
             <Col
