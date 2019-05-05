@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, Form, Input } from 'reactstrap';
-import { FaGoogle } from 'react-icons/fa';
+import { FaCamera } from 'react-icons/fa';
 
 class SearchBar extends Component {
   state = {
@@ -22,7 +22,7 @@ class SearchBar extends Component {
               md={3}
               className="d-flex justify-content-center justify-content-md-start mb-4 mb-md-0"
             >
-              <FaGoogle size={32} className="text-primary" />
+              <FaCamera size={32} />
             </Col>
             <Col md={6}>
               <Form onSubmit={this.onFormSubmit}>
