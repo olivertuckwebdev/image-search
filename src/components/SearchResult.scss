@@ -1,4 +1,8 @@
 .search-result {
+  @media (max-width: 767px) {
+    grid-row-end: span 1 !important;
+  }
+
   .information {
     h2 {
       font-size: 1.5rem;
