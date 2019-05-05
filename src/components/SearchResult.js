@@ -11,7 +11,7 @@ class SearchResult extends Component {
 
   render() {
     return (
-      <div className="search-result">
+      <div ref={this.resultRef} className="search-result">
         <img src={this.props.src} alt={this.props.alt} className="img-fluid" />
         <div className="information d-flex justify-content-between px-2 px-sm-0 mt-2">
           <div className="d-flex align-items-center">
