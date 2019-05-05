@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import { Container } from 'reactstrap';
 import api from '../api/api';
 import SearchBar from './SearchBar';
 import SearchResults from './SearchResults';
 
 class App extends Component {
-  state = { isResults: false, searchTerm: null, searchResults: [] };
+  state = { searchTerm: '', searchResults: [] };
 
   onSearchSubmit = async searchTerm => {
     const response = await api.get('/search/photos', {
@@ -12,14 +13,13 @@ class App extends Component {
     });
 
     this.setState({
-      isResults: true,
       searchTerm,
       searchResults: response.data.results
     });
   };
 
   isResults = () => {
-    if (this.state.isResults) {
+    if (this.state.searchResults.length > 0) {
       return (
         <SearchResults
           searchTerm={this.state.searchTerm}
@@ -33,7 +33,9 @@ class App extends Component {
     return (
       <div className="App">
         <SearchBar onSubmit={this.onSearchSubmit} />
-        {this.isResults()}
+        <main className="search-results py-5">
+          <Container>{this.isResults()}</Container>
+        </main>
       </div>
     );
   }

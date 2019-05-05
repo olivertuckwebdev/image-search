@@ -1,3 +1,5 @@
-$enable-shadows: true;
+$theme-colors: (
+  'likes': #f15151
+);
 
 @import '~bootstrap/scss/bootstrap.scss';
