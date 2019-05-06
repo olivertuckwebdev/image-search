@@ -36,7 +36,7 @@ class App extends Component {
       <div className="App">
         <header className="fixed-top py-4 shadow-sm">
           <Container>
-            <Row>
+            <Row className="align-items-center">
               <Col
                 md={3}
                 className="d-flex justify-content-center justify-content-md-start mb-4 mb-md-0"
