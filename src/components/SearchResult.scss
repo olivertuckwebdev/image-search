@@ -1,6 +1,12 @@
 .search-result {
-  @media (max-width: 767px) {
-    grid-row-end: span 1 !important;
+  img {
+    width: 100%;
+    height: auto;
+
+    @media (min-width: 768px) {
+      height: calc(100% - 2.4375rem);
+      object-fit: cover;
+    }
   }
 
   .information {

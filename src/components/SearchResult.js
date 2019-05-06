@@ -3,41 +3,10 @@ import { FaHeart, FaDownload } from 'react-icons/fa';
 import './SearchResult.scss';
 
 class SearchResult extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = { spans: 0 };
-
-    this.resultImageRef = React.createRef();
-  }
-
-  componentDidMount() {
-    this.resultImageRef.current.addEventListener('load', this.setSpans);
-  }
-
-  setSpans = () => {
-    const height = this.resultImageRef.current.clientHeight;
-    const spans = Math.ceil(height / 10);
-
-    console.log('called');
-
-    this.setState({
-      spans
-    });
-  };
-
   render() {
     return (
-      <div
-        style={{ gridRowEnd: `span ${this.state.spans}` }}
-        className="search-result"
-      >
-        <img
-          ref={this.resultImageRef}
-          src={this.props.src}
-          alt={this.props.alt}
-          className="img-fluid"
-        />
+      <div className="search-result">
+        <img src={this.props.src} alt={this.props.alt} />
         <div className="information d-flex justify-content-between px-2 px-sm-0 mt-2">
           <div className="d-flex align-items-center">
             <FaHeart className="mr-1 text-likes" />
