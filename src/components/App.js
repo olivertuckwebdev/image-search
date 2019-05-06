@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Container } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
+import { FaCamera } from 'react-icons/fa';
 import api from '../api/api';
 import SearchBar from './SearchBar';
 import SearchResults from './SearchResults';
@@ -33,7 +34,21 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <SearchBar onSubmit={this.onSearchSubmit} />
+        <header className="fixed-top py-4 shadow-sm">
+          <Container>
+            <Row>
+              <Col
+                md={3}
+                className="d-flex justify-content-center justify-content-md-start mb-4 mb-md-0"
+              >
+                <FaCamera size={32} />
+              </Col>
+              <Col md={6}>
+                <SearchBar onSubmit={this.onSearchSubmit} />
+              </Col>
+            </Row>
+          </Container>
+        </header>
         <main className="search-results py-5">
           <Container>{this.isSearch()}</Container>
         </main>
