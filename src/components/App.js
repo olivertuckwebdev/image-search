@@ -11,7 +11,7 @@ class App extends Component {
 
   onSearchSubmit = async searchTerm => {
     const response = await api.get('/search/photos', {
-      params: { query: searchTerm }
+      params: { query: searchTerm, per_page: 30 }
     });
 
     this.setState({
@@ -34,7 +34,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="fixed-top py-4 shadow-sm">
+        <header className="fixed-top py-4 bg-white shadow-sm">
           <Container>
             <Row className="align-items-center">
               <Col
