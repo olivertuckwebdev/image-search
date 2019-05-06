@@ -15,7 +15,7 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <header className="py-4 shadow-sm">
+      <header className="fixed-top py-4 bg-white shadow-sm">
         <Container>
           <Row className="align-items-center">
             <Col

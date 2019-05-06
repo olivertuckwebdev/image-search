@@ -3,6 +3,7 @@ import { Container } from 'reactstrap';
 import api from '../api/api';
 import SearchBar from './SearchBar';
 import SearchResults from './SearchResults';
+import './App.scss';
 
 class App extends Component {
   state = { searchTerm: '', searchResults: [] };
